@@ -36,7 +36,7 @@ public class CadastroClientes{
             while(sc.hasNext()){
                 String line = sc.nextLine();
                 String campos[] = line.split("[,\n]");
-                // Instancia um cliente de cada vez dentro de uma coleção de ClienteS ( O ARROMBADO BOTOU O MESMO NOME PRAS PORR DE VETOR )
+                // Instancia um cliente de cada vez dentro de uma coleção de ClienteS ( BOTOU O MESMO NOME PRAS PORR DE VETOR )
                 Cliente cliente = new Cliente(Integer.parseInt(campos[0].trim()),
                                             campos[1].trim(),
                                             campos[2].trim(),
