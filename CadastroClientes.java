@@ -36,6 +36,7 @@ public class CadastroClientes{
             while(sc.hasNext()){
                 String line = sc.nextLine();
                 String campos[] = line.split("[,\n]");
+                // Instancia um cliente de cada vez dentro de uma coleção de ClienteS ( O ARROMBADO BOTOU O MESMO NOME PRAS PORR DE VETOR )
                 Cliente cliente = new Cliente(Integer.parseInt(campos[0].trim()),
                                             campos[1].trim(),
                                             campos[2].trim(),
@@ -45,6 +46,8 @@ public class CadastroClientes{
                                             campos[6].trim(),
                                             campos[7].trim(),
                                             campos[8].trim());
+                                            // INTERA SOBRE O VETOR CLIENTES E ADICIONA O CLIENTE ATUAL A INTERAÇÃO ATUAL E ATUALIZA -> INDICE++ E REPETE
+                                            // clientes[ind] - guarda na linha atual
                 clientes[ind] = cliente;
                 ind++;
             }
@@ -103,11 +106,12 @@ public class CadastroClientes{
         }
         // Monta o vetor resposta
         Cliente[] resp = new Cliente[MAX_DADOS];
-        int pos = 0;
+        // resp -> vetor do tipo cliente
+        int pos = 0; // pos -> index que salva o id de um cliente
         for(int i=0;i<MAX_DADOS;i++){
             if (clientes[i].getSexo().equals(sexo)){
-                resp[pos] = clientes[i];
-                pos++;
+                resp[pos] = clientes[i]; // salva o cliente selecionado ( clientes[i] - em um novo vetor de cliente ( resp ) com index [pos] === resp[pos] = clientes[i])
+                pos++; // itera o pos para poder adicionar o proximo cliente que achar que passe na validação de ter o sexo passado por parametro ( equals )
             }
         }
         return Arrays.copyOf(resp,pos);

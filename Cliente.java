@@ -8,7 +8,6 @@ public class Cliente{
     private String cidade;
     private String pais;
     private String profissao;
-
     public Cliente(int id,String nome,String email,String sexo,String telefone,String cep,String cidade,String pais,String profissao){
         this.id = id;
         this.nome = nome;
@@ -20,6 +19,7 @@ public class Cliente{
         this.pais = pais;
         this.profissao = profissao;
     }
+
 
     public int getId(){
         return id;
